@@ -1,10 +1,11 @@
 version: '3.3'
 
 services:
+
   todolist:
+    image: spygram/todolist:latest
     build:
       context: '.'
       dockerfile: Dockerfile
     ports:
       - 4000:4000
-    container_name: spygram/todolist
