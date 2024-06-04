@@ -16,8 +16,8 @@ pipeline {
             }
         }
         stage("Push") {
-            echo 'Push image to docker hub'
             steps {
+		 echo 'Push image to docker hub'
                  script{
                     docker.withRegistry('', 'dockerhub-credentials-id') {
                         sh 'docker push $APP_IMAGE:$IMAGE_TAG'
@@ -33,4 +33,3 @@ pipeline {
         }
     }
 }
-
